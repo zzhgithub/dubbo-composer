@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  dubbo-composer-test:
+    image: node:10-alpine
+    working_dir: /code
+    volumes:
+      - ./:/code/
+    command: ["node", "test.js"]
+    networks:
+      localme:
+    deploy:
+      placement:
+        constraints:
+          - node.labels.role == service
+
+networks:
+  localme:
+    external: true
