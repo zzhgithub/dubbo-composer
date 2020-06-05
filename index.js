@@ -17,7 +17,7 @@ class DubboComposer {
     this.zkBank = new ZkBank(config);
     this.zkBank.setDispacher(dispatcher);
     this.balancer = new Balancer({
-      bank: zkBank,
+      bank: this.zkBank,
       mode: "defualt",
     });
     return this;
