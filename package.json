@@ -1,12 +1,17 @@
 {
   "name": "dubbo-composer",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "node call dubbo service with zookeeper and dubbo schema.",
+  "keywords": ["dubbo","zookeeper","hessian"],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "author": "zzhgithub",
   "license": "ISC",
   "dependencies": {
     "hessian.js": "^2.10.0",
