@@ -31,7 +31,7 @@ class DubboComposer {
     var name = service.name;
     var version = service.version;
     var group = service.group;
-    return new proxyMethodMissing(service, {}, (method, ...args) => {
+    return new proxyMethodMissing({}, (method, ...args) => {
       return new Promise((resolve, reject) => {
         this.balancer.pick(name, (err, info) => {
           if (err) {
