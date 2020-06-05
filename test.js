@@ -41,7 +41,7 @@ const test = async function (data) {
     const attach = { data, resolve, reject };
 
     dispatcher.gain({
-      ip: "10.0.1.215",
+      ip: "10.0.1.195",
       port: 20880,
       callback: function (err, socket) {
         if (err) {
