@@ -6,7 +6,7 @@ services:
     working_dir: /code
     volumes:
       - ./:/code/
-    command: ["node", "test.js"]
+    command: ["node", "test2.js"]
     networks:
       localme:
     deploy:
