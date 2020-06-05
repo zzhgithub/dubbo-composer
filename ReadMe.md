@@ -1,39 +1,21 @@
 # dubbo-composer
 
-thanks to @panzhichao.
-and fix some bug! base on long connect.
+ [中文](ReadMe_CN.md)
 
-# lib
+It may be one of the best node calling dubbo solutions at present.
 
-- decode.js dubbo 协议解码器
-- encode.js dubbo 协议编码器
-- socket.js 建立链接
-- dispatcher.js 链接调度器。使用 ip 进行调度管理
-- balancer.js 负载均衡器 两种模式（随机和轮询）
-- zkBank.js zk 链接池。
+## Precautions
+- Only supports zookeeper as a registration center
+- Only supports dubbo protocol
 
-# 测试
+## Advantage
+- Implement socket scheduling based on ip:port. Use long links to the maximum
+- Extremely simplified service configuration
+- Dynamically change provider information. Try to ensure the normal operation of the scheduler.
+- Random and polling load balancing algorithm
 
-- test.js 使用 dubbo 源数据进行调用的测试(没有使用 zk 和管理)
-- test2.js 使用 zk 获取到 服务的地址信息
-
-# Need Fixed!
-
-- 在调度器中 只识别了 ip 没有使用 ip+port 的方法！！
-- 在变更的时候没有。刷新调度器的资源
-
-# 服务代理
-
-- 服务 class->方法
-- ====>（!!! 代理服务的行为 !!!）
-- =====> 方法数据生成调用的 metaData
-- ====> 负载均衡器 获取到 ip 和 port
-- ===> 调度器去申请到 socket 链接
-- ====>socket 完成链接，和请求。
-
-# 使用示例 todo
-
-./service/userService.js
+## Usage
+Interface definition document
 
 ```js
 const UserService = {
@@ -43,6 +25,7 @@ const UserService = {
 };
 module.exports = { UserService };
 ```
+
 
 ```js
 const { UserService } = require("./service/userService");
@@ -63,8 +46,6 @@ var config = {
 };
 
 const dubbo = new DubboComposer(config);
-// 上面这个对象可以导出到公共位置 使用单例模式
-
 
 var req = {
   $class: "com.dto.ExampleDto",
@@ -79,6 +60,16 @@ dubbo
     //... deal with result
   })
   .catch((err) => {
-    //Oh!
+    // Oh!
   });
 ```
+
+## Known deficiency
+- The input parameter format is not simplified
+- There is no solution to support API generation interface for the time being
+- Interface has no good code hints
+
+## thanks
+Thanks to [node-zookeeper-dubbo](https://www.npmjs.com/package/node-zookeeper-dubbo) for this project and his author.
+
+Part of the function of this project comes from the idea of this project.

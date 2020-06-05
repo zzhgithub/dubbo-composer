@@ -1,6 +1,6 @@
 {
   "name": "dubbo-composer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "node call dubbo service with zookeeper and dubbo schema.",
   "keywords": ["dubbo","zookeeper","hessian"],
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/zzhgithub/dubbo-composer.git"
   },
   "author": "zzhgithub",
   "license": "ISC",
