@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "hessian.js": "^2.10.0",
-    "node-zookeeper-client": "^1.1.0"
+    "node-zookeeper-client": "^1.1.0",
+    "proxy-method-missing": "^1.0.1"
   }
 }
