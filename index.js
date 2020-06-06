@@ -4,6 +4,7 @@ const Encode = require("./lib/encode");
 const { ZkBank } = require("./lib/zkBank");
 const { Balancer } = require("./lib/balancer");
 const proxyMethodMissing = require("proxy-method-missing");
+const { jsonToJavaJson } = require("./lib/tools");
 
 const dispatcher = new Dispatcher();
 dispatcher.config({
@@ -40,6 +41,19 @@ class DubboComposer {
         this.balancer.pick(name, (err, info) => {
           if (err) {
             reject(err);
+          }
+          // 处理入参
+          if (service.hasOwnProperty(paramsType)) {
+            var paramsType = service.paramsType;
+            if (paramsType.length !== args.length) {
+              reject(
+                `param is not match need ${paramsType.length}, but find ${args.length}`
+              );
+            } else {
+              args = paramsType.map(function(e,i){
+                return jsonToJavaJson(e,args[i]);
+              });
+            }
           }
           var metaData = {
             _args: args,

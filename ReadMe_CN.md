@@ -78,6 +78,11 @@ dubbo
 - api生成node文件方案支持
 - 支持dubbo附件
 
+# changeLog
+- 0.0.1 基本功能
+- 0.0.2 提供文档
+- 0.0.3 注册comsumer到注册中心, 使用预定义的数据类型进行转化
+
 ## 感谢
 
 感谢 [node-zookeeper-dubbo](https://www.npmjs.com/package/node-zookeeper-dubbo) 这个项目和他的作者。

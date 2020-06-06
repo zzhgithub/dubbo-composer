@@ -64,10 +64,19 @@ dubbo
   });
 ```
 
+
+
 ## Known deficiency
 - The input parameter format is not simplified
 - There is no solution to support API generation interface for the time being
 - Interface has no good code hints
+
+
+# changeLog
+- 0.0.1 Init (basic function)
+- 0.0.2 document support
+- 0.0.3 register comsumer to zookeeper, Conversion using predefined data types
+
 
 ## thanks
 Thanks to [node-zookeeper-dubbo](https://www.npmjs.com/package/node-zookeeper-dubbo) for this project and his author.

@@ -1,6 +1,6 @@
 {
   "name": "dubbo-composer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "node call dubbo service with zookeeper and dubbo schema.",
   "keywords": ["dubbo","zookeeper","hessian"],
   "main": "index.js",
