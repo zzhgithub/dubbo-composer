@@ -22,10 +22,20 @@ const UserService = {
   name: "com.startlink.user.api.UserService",
   group: "",
   version: "0.0.1",
+  paramsType: [
+    {
+      $class: "com.startlink.user.dto.RegisterUserRequestDto",
+      $: {
+        userName: { $class: "java.lang.String" },
+        password: { $class: "java.lang.String" },
+      },
+    },
+  ],
 };
 module.exports = { UserService };
 ```
 
+> paramsType is compatible with version 0.0.2. If you do not configure this option, you can write all Java-style objects in subsequent calls.
 
 ```js
 const { UserService } = require("./service/userService");
@@ -48,10 +58,8 @@ var config = {
 const dubbo = new DubboComposer(config);
 
 var req = {
-  $class: "com.dto.ExampleDto",
-  $: {
-    name: { $class: "com.lang.String", $: "test" },
-  },
+  userName:"周子豪",
+  password:"Best of Dubbo-Node"
 };
 
 dubbo

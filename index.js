@@ -43,7 +43,7 @@ class DubboComposer {
             reject(err);
           }
           // 处理入参
-          if (service.hasOwnProperty(paramsType)) {
+          if (service.hasOwnProperty("paramsType")) {
             var paramsType = service.paramsType;
             if (paramsType.length !== args.length) {
               reject(
