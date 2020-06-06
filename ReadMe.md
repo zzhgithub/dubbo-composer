@@ -75,7 +75,7 @@ dubbo
 
 
 ## Known deficiency
-- The input parameter format is not simplified
+- ~~The input parameter format is not simplified~~
 - There is no solution to support API generation interface for the time being
 - Interface has no good code hints
 
