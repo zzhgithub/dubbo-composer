@@ -31,6 +31,10 @@ class DubboComposer {
     var name = service.name;
     var version = service.version;
     var group = service.group;
+
+    // 注册到comsumer到注册中心
+    this.zkBank.registerComsumer(service);
+
     return new proxyMethodMissing({}, (method, ...args) => {
       return new Promise((resolve, reject) => {
         this.balancer.pick(name, (err, info) => {
