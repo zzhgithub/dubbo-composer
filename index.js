@@ -43,15 +43,20 @@ class DubboComposer {
             reject(err);
           }
           // 处理入参
-          if (service.hasOwnProperty("paramsType")) {
-            var paramsType = service.paramsType;
+          // 如果存在 方法入参的定义择进行转换
+          if (
+            service.hasOwnProperty("methods") &&
+            service.methods.hasOwnProperty(method) &&
+            service.methods[method].hasOwnProperty("paramsType")
+          ) {
+            var paramsType = service.methods[method].paramsType;
             if (paramsType.length !== args.length) {
               reject(
                 `param is not match need ${paramsType.length}, but find ${args.length}`
               );
             } else {
-              args = paramsType.map(function(e,i){
-                return jsonToJavaJson(e,args[i]);
+              args = paramsType.map(function (e, i) {
+                return jsonToJavaJson(e, args[i]);
               });
             }
           }
