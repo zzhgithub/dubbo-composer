@@ -7,6 +7,7 @@ It may be one of the best node calling dubbo solutions at present.
 ## Precautions
 - Only supports zookeeper as a registration center
 - Only supports dubbo protocol
+- Do not use multiple versions of dubbo, it will be supported in the future
 
 ## Advantage
 - Implement socket scheduling based on ip:port. Use long links to the maximum
@@ -22,20 +23,32 @@ const UserService = {
   name: "com.startlink.user.api.UserService",
   group: "",
   version: "0.0.1",
-  paramsType: [
-    {
-      $class: "com.startlink.user.dto.RegisterUserRequestDto",
-      $: {
-        userName: { $class: "java.lang.String" },
-        password: { $class: "java.lang.String" },
+  mehods:{
+    "register":{
+      paramsType:[
+          {
+          $class: "com.startlink.user.dto.RegisterUserRequestDto",
+          $: {
+              userName: { $class: "java.lang.String" },
+              password: { $class: "java.lang.String" },
+            },
+          },
+        ],
       },
-    },
-  ],
+  }
 };
 module.exports = { UserService };
 ```
 
 > paramsType is compatible with version 0.0.2. If you do not configure this option, you can write all Java-style objects in subsequent calls.
+
+> paramsType 0.1.0 is not compatible with the interface definition method of version 0.0.2. Methods are proposed separately. It is recommended to use API generation tools to handle definitions elegantly. 
+
+
+### Fortunately, the above interface definition is automatically generated
+The definition based on java api can be automatically generated. The above interface definition is convenient for you to introduce into the project and start using it. This interface definition was not used until version 0.1.0
+[dubbo-composer-api-gen](https://www.npmjs.com/package/dubbo-composer-api-gen)
+
 
 ```js
 const { UserService } = require("./service/userService");
@@ -84,9 +97,12 @@ dubbo
 - 0.0.1 Init (basic function)
 - 0.0.2 document support
 - 0.0.3 register comsumer to zookeeper, Conversion using predefined data types
+- 0.1.0 Support interface call of docker-composer-api-gen automatic generation tool
 
 
 ## thanks
 Thanks to [node-zookeeper-dubbo](https://www.npmjs.com/package/node-zookeeper-dubbo) for this project and his author.
-
 Part of the function of this project comes from the idea of this project.
+
+## Seeking Like
+You all see here, click on the item to give it a thumbs up!
