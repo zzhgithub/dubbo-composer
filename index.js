@@ -64,7 +64,8 @@ class DubboComposer {
             _args: args,
             _dver: this.config.dubbo._version,
             _interface: name,
-            _version: version,
+            // fixme 这里的版本号控制不好
+            _version: info.version,
             _method: method,
             _timeout: this.config.dubbo.timeout,
             _group: group,
