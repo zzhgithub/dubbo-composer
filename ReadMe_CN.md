@@ -52,6 +52,8 @@ module.exports = { UserService };
 
 ### 幸运的是自动生成上面接口定义
 基于java api的定义可以自动生成。上面的接口定义，方便你引入到项目中开始使用。这个接口定义直到0.1.0版本才开始使用
+
+
 [dubbo-composer-api-gen](https://www.npmjs.com/package/dubbo-composer-api-gen)
 
 
@@ -110,7 +112,7 @@ dubbo
 - 0.0.2 提供文档
 - 0.0.3 注册 comsumer 到注册中心, 使用预定义的数据类型进行转化
 - 0.1.0 支持docker-composer-api-gen 自动生成工具的接口调用
-
+- 0.1.1 处理注册版本问题
 ## 感谢
 
 感谢 [node-zookeeper-dubbo](https://www.npmjs.com/package/node-zookeeper-dubbo) 这个项目和他的作者。

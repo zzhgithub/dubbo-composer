@@ -47,6 +47,8 @@ module.exports = { UserService };
 
 ### Fortunately, the above interface definition is automatically generated
 The definition based on java api can be automatically generated. The above interface definition is convenient for you to introduce into the project and start using it. This interface definition was not used until version 0.1.0
+
+
 [dubbo-composer-api-gen](https://www.npmjs.com/package/dubbo-composer-api-gen)
 
 
@@ -98,6 +100,7 @@ dubbo
 - 0.0.2 document support
 - 0.0.3 register comsumer to zookeeper, Conversion using predefined data types
 - 0.1.0 Support interface call of docker-composer-api-gen automatic generation tool
+- 0.1.1 Handling issues with registered versions
 
 
 ## thanks
