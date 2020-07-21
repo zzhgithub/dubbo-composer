@@ -51,12 +51,13 @@ class DubboComposer {
             service.methods[method].hasOwnProperty("paramsType")
           ) {
             var paramsType = service.methods[method].paramsType;
-            if (paramsType.length !== args.length) {
+            var tmpType = JSON.parse(JSON.stringify(paramsType));
+            if (tmpType.length !== args.length) {
               reject(
-                `param is not match need ${paramsType.length}, but find ${args.length}`
+                `param is not match need ${tmpType.length}, but find ${args.length}`
               );
             } else {
-              args = paramsType.map(function (e, i) {
+              args = tmpType.map(function (e, i) {
                 return jsonToJavaJson(e, args[i]);
               });
             }

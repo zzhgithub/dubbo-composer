@@ -97,13 +97,13 @@ dubbo
 ## 已知不足
 
 - ~~入参格式没有简化~~
-- 暂时没有支持 api 生成接口的方案
+- ~~暂时没有支持 api 生成接口的方案~~
 - 接口没有良好代码提示
 
 ## TODO
 
 - 暴露更多内部配置项
-- api 生成 node 文件方案支持
+- ~~api 生成 node 文件方案支持~~
 - 支持 dubbo 附件
 
 # changeLog
@@ -113,6 +113,7 @@ dubbo
 - 0.0.3 注册 comsumer 到注册中心, 使用预定义的数据类型进行转化
 - 0.1.0 支持docker-composer-api-gen 自动生成工具的接口调用
 - 0.1.1 处理注册版本问题
+- 0.1.2 修复请求数据每次一样的问题
 ## 感谢
 
 感谢 [node-zookeeper-dubbo](https://www.npmjs.com/package/node-zookeeper-dubbo) 这个项目和他的作者。
